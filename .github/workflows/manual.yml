@@ -29,9 +29,9 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Create directory
-      run: mkdir -p {{ github.event.inputs.app_name }}
+      run: mkdir -p "{{ github.event.inputs.app_name }}"
     - name: Change directory
-      run: cd {{ github.event.inputs.app_name }}
+      run: cd "{{ github.event.inputs.app_name }}"
 
     # Download GPlay Data
     - name: Download Stats
