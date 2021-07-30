@@ -28,8 +28,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
       
-    - name: Create Folder
-      run: mkdir -p {{ github.event.inputs.app_name }} && cd {{ github.event.inputs.app_name }}
+    - name: Create directory
+      run: mkdir -p {{ github.event.inputs.app_name }}
+    - name: Change directory
+      run: cd {{ github.event.inputs.app_name }}
 
     # Download GPlay Data
     - name: Download Stats
