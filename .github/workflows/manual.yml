@@ -33,11 +33,10 @@ jobs:
     - name: Change directory
       run: cd "{{ github.event.inputs.app_name }}"
 
-    # Download GPlay Data wget -q -O - someurl | sed
-    - name: Make Directory
-    - run:  mkdir -p ${{ github.event.inputs.app_name }} && cd ${{ github.event.inputs.app_name }}
+    # Download GPlay Data wget -q -O - someurl
     - name: Download Stats
     - run:  wget -q -O ${{ github.event.inputs.app_name }}.json - https://gplayapi.herokuapp.com/api/apps/${{ github.event.inputs.app_name }}
+    
     - name: Download Permission Data
       run:  wget -q -O permissions_${{ github.event.inputs.app_name }}.json - https://gplayapi.herokuapp.com/api/apps/${{ github.event.inputs.app_name }}/permissions
       
