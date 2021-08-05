@@ -35,10 +35,10 @@ jobs:
 
     # Download GPlay Data wget -q -O - someurl
     - name: Download Stats
-      run:  wget -q -O ${{ github.event.inputs.app_name }}.json - https://gplayapi.herokuapp.com/api/apps/${{ github.event.inputs.app_name }}
+      run:  wget -q -O ${{ github.event.inputs.app_name }}.json https://gplayapi.herokuapp.com/api/apps/${{ github.event.inputs.app_name }}
     
     - name: Download Permission Data
-      run:  wget -q -O permissions_${{ github.event.inputs.app_name }}.json - https://gplayapi.herokuapp.com/api/apps/${{ github.event.inputs.app_name }}/permissions
+      run:  wget -q -O permissions_${{ github.event.inputs.app_name }}.json https://gplayapi.herokuapp.com/api/apps/${{ github.event.inputs.app_name }}/permissions
       
     - name: Commit new and updated files back to this repository
       run: |
